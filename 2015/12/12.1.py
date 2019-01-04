@@ -6,10 +6,10 @@ cur_line = cur_line.replace("[", " ").replace("]", " ")
 cur_line = cur_line.replace("{", " ").replace("}", " ")
 cur_line = cur_line.replace(":", " ")
 cur_line = cur_line.replace(",", " ")
-cur_line_splint = cur_line.split(" ")
+cur_line_split = cur_line.split(" ")
 
 total_value = 0
-for value in cur_line_splint:
+for value in cur_line_split:
     try:
         value = int(value)
         total_value = total_value + value
