@@ -1,4 +1,4 @@
-time_goal = 2503 #1000 #second at which we want to know the winner
+time_goal = 2503  # 1000 #second at which we want to know the winner
 
 with open("input14.txt") as f:
     content = f.readlines()

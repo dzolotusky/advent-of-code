@@ -1,6 +1,7 @@
 with open("input11.txt") as f:
     content = [s.strip() for s in f.readlines()]
 
+
 def increment_str(cur_line_list, index):
     if index == None:
         index = len(cur_line_list) - 1
@@ -10,6 +11,7 @@ def increment_str(cur_line_list, index):
     else:
         cur_line_list[index] = 'a'
         increment_str(cur_line_list, index - 1)
+
 
 for cur_line in content:
     valid = False
@@ -33,7 +35,8 @@ for cur_line in content:
                 else:
                     pairs.append(indx + 1)
 
-            if indx < len(cur_line_list) - 2 and ord(cur_char) + 1 == ord(cur_line_list[indx + 1]) and ord(cur_char) + 2 == ord(cur_line_list[indx + 2]):
+            if indx < len(cur_line_list) - 2 and ord(cur_char) + 1 == ord(cur_line_list[indx + 1]) and ord(
+                    cur_char) + 2 == ord(cur_line_list[indx + 2]):
                 increasing_straight = True
 
         if not increasing_straight:

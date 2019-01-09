@@ -18,12 +18,19 @@ print(ingredients)
 
 highest_score = 0
 
-#returns the score of a cookie with the ingredient combo specified in the passed in list
+
+# returns the score of a cookie with the ingredient combo specified in the passed in list
 def cookie_score(cookie_contents):
     total_ingredients = [0] * 4
+    total_calories = 0
     for ind, count in enumerate(cookie_contents):
-        for ingredient in range(4):
-            total_ingredients[ingredient] = total_ingredients[ingredient] + count * ingredients[ind][ingredient]
+        total_calories = total_calories + count * ingredients[ind][4]
+
+        for property in range(4):
+            total_ingredients[property] = total_ingredients[property] + count * ingredients[ind][property]
+
+    if total_calories != 500:
+        return -1
 
     score = 1
     for ing_score in total_ingredients:
@@ -33,10 +40,12 @@ def cookie_score(cookie_contents):
 
     return score
 
-#print(cookie_score([44, 56])) # verify that cookie_score matches example
+
+# print(cookie_score([44, 56])) # verify that cookie_score matches example
 
 highest_score = -1
 best_combo = None
+
 
 def find_highest_score(cur_values):
     global highest_score
@@ -63,3 +72,6 @@ find_highest_score([-1] * len(ingredients))
 
 print(highest_score)
 print(best_combo)
+
+# 13882464 too high
+# 11171160

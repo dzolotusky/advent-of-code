@@ -14,7 +14,6 @@ for cur_line in content:
     string_chars = string_chars - cur_line.count("\\x") * 3
     total_string_chars = total_string_chars + string_chars
 
-
 print("total chars = " + str(total_chars))
 print("string chars = " + str(total_string_chars))
 print("part 1 = " + str(total_chars - total_string_chars))

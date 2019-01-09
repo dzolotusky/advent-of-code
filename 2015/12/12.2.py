@@ -8,7 +8,8 @@ remove = []
 for indx, cur_char in enumerate(cur_line):
     if cur_char == '{':
         stack_of_curly.append((indx, False))
-    if cur_char == ':' and cur_line[indx + 1] == '"' and cur_line[indx + 2] == 'r' and cur_line[indx + 3] == 'e' and cur_line[indx + 4] == 'd':
+    if cur_char == ':' and cur_line[indx + 1] == '"' and cur_line[indx + 2] == 'r' and cur_line[indx + 3] == 'e' and \
+            cur_line[indx + 4] == 'd':
         if len(stack_of_curly) > 0:
             (start, redness) = stack_of_curly.pop()
             stack_of_curly.append((start, True))

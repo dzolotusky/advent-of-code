@@ -11,7 +11,6 @@ for cur_line in content:
     encoded_chars = encoded_chars + cur_line.count("\\") + cur_line.count("\"")
     total_encoded_chars = total_encoded_chars + encoded_chars
 
-
 print("total chars = " + str(total_chars))
 print("encoded chars = " + str(total_encoded_chars))
 print("part 2 = " + str(total_encoded_chars - total_chars))

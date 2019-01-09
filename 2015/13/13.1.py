@@ -16,19 +16,21 @@ for cur_line in content:
         old_delta = happiness_deltas[(name2, name1)]
         happiness_deltas[(name2, name1)] = delta + old_delta
     else:
-        happiness_deltas[(name1, name2)] =  delta
+        happiness_deltas[(name1, name2)] = delta
 
     if name1 not in guests:
         guests.append(name1)
 
+
 def get_happiness(seats):
     happiness = 0
     for i in range(len(seats)):
-        pair = (seats[i], seats[(i+1) % len(seats)])
+        pair = (seats[i], seats[(i + 1) % len(seats)])
         if not pair in happiness_deltas:
             pair = (pair[1], pair[0])
         happiness = happiness + happiness_deltas[pair]
     return happiness
+
 
 def get_all_permutations(options):
     if len(options) == 1:
@@ -42,6 +44,7 @@ def get_all_permutations(options):
             permutations.append([opt] + permutation)
 
     return permutations
+
 
 max_happiness = 0
 for perm in get_all_permutations(guests):

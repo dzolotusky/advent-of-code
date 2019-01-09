@@ -45,5 +45,5 @@ for start_city in cities:
         best_distance = total_distance
         best_path = full_path
 
-print (best_path)
-print (best_distance)
+print(best_path)
+print(best_distance)

@@ -1,12 +1,14 @@
 with open("input7.txt") as f:
     content = f.readlines()
 
+
 def is_int(s):
     try:
         int(s)
         return True
     except ValueError:
         return False
+
 
 wires = {}
 for cur_line in content:
@@ -22,13 +24,15 @@ for cur_line in content:
     else:
         wires[wire] = value
 
+
 def get_value(value_str):
     if is_int(value_str):
         return int(value_str)
     else:
         return wires[value_str]
 
-for i in range(1,110):
+
+for i in range(1, 110):
     for wire in wires:
         if isinstance(wires[wire], list):
             cur_wire = wires[wire]
@@ -72,6 +76,7 @@ def print_wires():
     wire_names.sort()
     for wire_name in wire_names:
         print(wire_name + ": " + str(wires[wire_name]))
+
 
 print_wires()
 

@@ -4,17 +4,19 @@ with open("input6.txt") as f:
 lights = []
 brightness = []
 
-for i in range(0,1000):
-    sub_array = [0]*1000
+for i in range(0, 1000):
+    sub_array = [0] * 1000
     lights.append(sub_array)
 
-for i in range(0,1000):
-    sub_array = [0]*1000
+for i in range(0, 1000):
+    sub_array = [0] * 1000
     brightness.append(sub_array)
+
 
 def read_loc(loc_string):
     loc_string_split = [int(coord) for coord in loc_string.split(",")]
     return loc_string_split[0], loc_string_split[1]
+
 
 for cur_line in content:
     cur_line_split = cur_line.split(" ")
@@ -40,7 +42,6 @@ for cur_line in content:
             for j in range(start_loc[1], end_loc[1] + 1):
                 lights[i][j] = (lights[i][j] + 1) % 2
                 brightness[i][j] = brightness[i][j] + 2
-
 
 lights_on = 0
 for i in range(len(lights)):
