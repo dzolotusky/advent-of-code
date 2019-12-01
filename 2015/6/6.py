@@ -55,6 +55,3 @@ for i in range(len(brightness)):
 
 print("Part 1 = " + str(lights_on))
 print("Part 2 = " + str(tot_brightness))
-
-# 14190938 too low
-#

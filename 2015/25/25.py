@@ -17,6 +17,3 @@ for i in range(get_code_index(2947, 3029)):
     cur_code = next_code(cur_code)
 
 print(cur_code)
-
-# 17850354 too low
-# 19980801

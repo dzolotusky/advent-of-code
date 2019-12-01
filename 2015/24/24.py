@@ -8,11 +8,12 @@ for cur_line in content:
     containers.append(cur_weight)
     total += cur_weight
 
-group_weight = int(total / 4)   # 3 for part 1, 4 for part 2
+group_weight = int(total / 4)  # 3 for part 1, 4 for part 2
 
 all_options = []
 all_option_lengths = []
 shortest = None
+
 
 def get_all_combinations(selected, options):
     global all_options
@@ -43,16 +44,16 @@ def get_all_combinations(selected, options):
 
 get_all_combinations([], containers)
 
-#print(all_options)
+# print(all_options)
 min_length = min(all_option_lengths)
-#print(min_length)
+# print(min_length)
 
 combos_with_min_length = []
 for combo in all_options:
     if len(combo) == min_length:
         combos_with_min_length.append(combo)
 
-#print(combos_with_min_length)
+# print(combos_with_min_length)
 min_qe = None
 for combo in combos_with_min_length:
     qe = 1

@@ -72,6 +72,3 @@ find_highest_score([-1] * len(ingredients))
 
 print(highest_score)
 print(best_combo)
-
-# 13882464 too high
-# 11171160

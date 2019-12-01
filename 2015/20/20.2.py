@@ -10,10 +10,10 @@ for elf in range(1, int(puzzle_input / 11)):
         if house_count >= 50:
             break
 
-    if elf % 10000 == 0:    # progress indicator
+    if elf % 10000 == 0:  # progress indicator
         print(elf)
 
-if len(houses) < 200:   # debug printing
+if len(houses) < 200:  # debug printing
     print(houses)
 
 for house_num, gift_count in enumerate(houses):
