@@ -6,8 +6,9 @@ with open("input15.txt") as f:
 relative_base = 0
 
 # puzzle 15
-cur_x = 30
-cur_y = 30
+start = (30,30)
+cur_x = start[0]
+cur_y = start[1]
 grid = []
 
 for i in range(60):
@@ -140,7 +141,7 @@ cur_pos = 0
 op_code = program[cur_pos]
 
 count = 0
-while op_code % 100 != 99 and count < 100000000:
+while op_code % 100 != 99 and count < 10000000:
     count += 1
     ins = op_code % 100
     p1_mode = 0
@@ -156,6 +157,29 @@ while op_code % 100 != 99 and count < 100000000:
 
     cur_pos, op_code, program = do_line(cur_pos, ins, program, p1_mode, p2_mode, p3_mode)
 
+visited = []
+
+
+def walk(pos, cur_dist):
+    if pos in visited:
+        return
+    visited.append(pos)
+
+    cur_dist += 1
+    if grid[pos[0]][pos[1]] == 'X':
+        print("Part 1 = " + str(cur_dist))
+        exit(0)
+
+    if grid[pos[0] + 1][pos[1]] in '.X':
+        walk((pos[0] + 1, pos[1]), cur_dist)
+    if grid[pos[0] - 1][pos[1]] in '.X':
+        walk((pos[0] - 1, pos[1]), cur_dist)
+    if grid[pos[0]][pos[1] + 1] in '.X':
+        walk((pos[0], pos[1] + 1), cur_dist)
+    if grid[pos[0]][pos[1] - 1] in '.X':
+        walk((pos[0], pos[1] - 1), cur_dist)
+
 print_grid()
-# grid printed a full map, for part 1, I just counted the spaces manually
+
+walk(start, -1)
 # for part 2, I just read in the map that this generated
