@@ -10,11 +10,10 @@ for num1 in numbers:
     for num2 in numbers:
         if num1 + num2 == 2020:
             part1 = num1 * num2
-            break
+
         for num3 in numbers:
             if num1 + num2 + num3 == 2020:
                 part2 = num1 * num2 * num3
-                break
 
 print("part 1 = " + str(part1))
 
