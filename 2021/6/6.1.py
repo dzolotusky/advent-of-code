@@ -4,7 +4,7 @@ with open("input6.txt") as f:
 covered = {}
 all_fish = [int(f) for f in content[0].split(",")]
 
-for day in range(256):
+for day in range(80):
     new_fish = []
     for index, cur_fish in enumerate(all_fish):
         if cur_fish == 0:
